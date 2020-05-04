@@ -6,14 +6,15 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import steps.LoginSteps;
+import steps.WorkoutAddSteps;
 import utils.CapabilitiesGenerator;
-
 import java.util.concurrent.TimeUnit;
 
 @Log4j2
 public class BaseTest {
     WebDriver driver;
     LoginSteps loginSteps;
+    WorkoutAddSteps workoutAddSteps;
 
     @BeforeMethod(description = "Opening Chrome Driver")
     public void setUp() {
@@ -21,9 +22,10 @@ public class BaseTest {
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.manage().window().maximize();
         loginSteps = new LoginSteps(driver);
+        workoutAddSteps = new WorkoutAddSteps(driver);
     }
 
-    @AfterMethod(description = "Closing browser")
+    @AfterMethod(description = "Closing browser", alwaysRun = true, enabled = true)
     public void closeBrowser() {
         driver.quit();
     }

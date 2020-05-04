@@ -15,8 +15,16 @@ public class LoginSteps {
 
     @Step("Login using valid username and password")
     public void login(User user) {
-        loginPage.openPage();
-        loginPage.login(user);
+        loginPage.openPage()
+                 .login(user)
+                 .isDashboardPageOpened();
+    }
+
+    @Step("Try to login using incorrect password")
+    public void invalidPasswordLogin(User user) {
+        loginPage.openPage()
+                .login(user)
+                .notificationCheck();
     }
 }
 
