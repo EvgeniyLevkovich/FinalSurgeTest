@@ -1,5 +1,6 @@
 package pages;
 
+import lombok.extern.log4j.Log4j2;
 import models.User;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -7,6 +8,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
+@Log4j2
 public class LoginPage extends BasePage {
 
     private final static String URL = "https://log.finalsurge.com/";
@@ -30,6 +32,7 @@ public class LoginPage extends BasePage {
     }
 
     public LoginPage login(User user) {
+        log.info("Login using login: " + user.getEmail() + ", password: " + user.getPassword());
         driver.findElement(LOGIN_FIELD).sendKeys(user.getEmail());
         driver.findElement(PASSWORD_FIELD).sendKeys(user.getPassword());
         driver.findElement(LOGIN_BUTTON).click();
@@ -37,10 +40,10 @@ public class LoginPage extends BasePage {
     }
 
     public void isDashboardPageOpened() {
-       assertEquals(driver.getCurrentUrl(), "https://log.finalsurge.com/", "Dashboard isn't opened");
+       assertEquals(driver.getCurrentUrl(), "https://log.finalsurge.com/", "Dashboard doesn't open");
     }
 
     public void notificationCheck() {
-        assertTrue(driver.findElement(INVALID_LOGIN_NOTIFICATION).isDisplayed(), "Invalid login notification isn't displayed");
+        assertTrue(driver.findElement(INVALID_LOGIN_NOTIFICATION).isDisplayed(), "Invalid login notification doesn't display");
     }
 }
