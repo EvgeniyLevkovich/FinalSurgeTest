@@ -22,28 +22,35 @@ public class WorkoutSteps {
     public void completeFullForm(String ActivityType, Workout workout) {
         calendarPage.getNumberOfWorkouts();
         workoutAddPage.openPage();
-        workoutAddPage.completeForm(ActivityType, workout);
-        calendarPage.checkWorkoutAddedToCalendar();
+        workoutAddPage.completeFullForm(ActivityType, workout);
+
+    }
+    @Step("Checking workouts have been added to calendar")
+    public void workoutAddedChecking() {
+        calendarPage.workoutAddedChecking();
     }
 
     @Step("Complete full form and checking the workout profile contains all data from the Add Workout form")
     public void dataChecking(String ActivityType, Workout workout) {
         workoutAddPage.openPage();
-        workoutAddPage.completeForm(ActivityType, workout);
-        workoutDataPage.dataChecking(ActivityType, workout);
+        workoutAddPage.completeFullForm(ActivityType, workout);
+        workoutDataPage.workoutDataChecking(ActivityType, workout);
     }
 
     @Step("Complete quick form")
     public void completeQuickForm(String ActivityType, Workout workout) {
         calendarPage.getNumberOfWorkouts();
         calendarPage.completeQuickForm(ActivityType, workout);
-        calendarPage.checkWorkoutAddedToCalendar();
     }
 
     @Step("Delete workout")
     public void deleteWorkout(int workoutIndex) {
         calendarPage.getNumberOfWorkouts();
         calendarPage.deleteWorkout(workoutIndex);
-        calendarPage.checkWorkoutDeletedFromCalendar();
+    }
+
+    @Step("Checking workouts have been deleted from calendar")
+    public void workoutDeletedChecking() {
+        calendarPage.workoutDeletedChecking();
     }
 }

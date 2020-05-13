@@ -21,10 +21,10 @@ public class WorkoutDataPage extends BasePage {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(UPDATE_WORKOUT_CSS)));
     }
 
-    public void dataChecking(String activityType, Workout workout) {
+    public void workoutDataChecking(String activityType, Workout workout) {
         isPageOpened();
-        assertEquals(driver.findElement(By.cssSelector(ACTIVITY_TYPE_NAME_CSS)).getText(), activityType, "Activity type doesn't match");
-        assertEquals(driver.findElement(By.cssSelector(WORKOUT_NAME_CSS)).getText(), workout.getName(), "Workout name doesn't match");
-        assertTrue(driver.findElement(By.cssSelector(WORKOUT_DESCRIPTION_CSS)).getText().contains(workout.getDescription()), "Workout time doesn't match");
+        assertEquals(driver.findElement(By.cssSelector(ACTIVITY_TYPE_NAME_CSS)).getText(), activityType, "Activity type isn't't matched");
+        assertEquals(driver.findElement(By.cssSelector(WORKOUT_NAME_CSS)).getText(), workout.getName(), "Workout name isn't't matched");
+        assertTrue(driver.findElement(By.cssSelector(WORKOUT_DESCRIPTION_CSS)).getText().contains(workout.getDescription()), "Workout time isn't't matched");
     }
 }

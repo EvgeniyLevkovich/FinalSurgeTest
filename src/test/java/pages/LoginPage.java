@@ -39,10 +39,10 @@ public class LoginPage extends BasePage {
     }
 
     public void isDashboardPageOpened() {
-       assertEquals(driver.getCurrentUrl(), "https://log.finalsurge.com/", "Dashboard doesn't open");
+       assertEquals(driver.getCurrentUrl(), "https://log.finalsurge.com/", "Dashboard isn't opened");
     }
 
     public void notificationCheck() {
-        assertTrue(driver.findElement(INVALID_LOGIN_NOTIFICATION).isDisplayed(), "Invalid login notification doesn't display");
+        assertTrue(driver.findElement(INVALID_LOGIN_NOTIFICATION).isDisplayed(), "Invalid login notification isn't displayed");
     }
 }

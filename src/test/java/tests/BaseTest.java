@@ -25,7 +25,7 @@ public class BaseTest {
         workoutSteps = new WorkoutSteps(driver);
     }
 
-    @AfterMethod(description = "Closing browser", alwaysRun = false, enabled = false)
+    @AfterMethod(description = "Closing browser", alwaysRun = true)
     public void closeBrowser() {
         driver.quit();
     }

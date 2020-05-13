@@ -36,11 +36,11 @@ public class CalendarPage extends BasePage {
         numberOfWorkouts = workouts.size();
     }
 
-     public void checkWorkoutAddedToCalendar() {
+     public void workoutAddedChecking() {
          openPage();
          List<WebElement> workoutsAfterAdding = driver.findElements(By.cssSelector(WORKOUT_CSS));
          int numberOfWorkoutsAfterAdding = workoutsAfterAdding.size();
-         assertEquals(numberOfWorkoutsAfterAdding, numberOfWorkouts + 1, "Workout hasn't added");
+         assertEquals(numberOfWorkoutsAfterAdding, numberOfWorkouts + 1, "Workout isn't added");
      }
 
     public void completeQuickForm(String ActivityType, Workout workout) {
@@ -62,10 +62,10 @@ public class CalendarPage extends BasePage {
         ((JavascriptExecutor) driver).executeScript("arguments[0].click();", confirmDeleteButton);
     }
 
-    public void checkWorkoutDeletedFromCalendar() {
+    public void workoutDeletedChecking() {
         openPage();
         List<WebElement> workoutsAfterAdding = driver.findElements(By.cssSelector(WORKOUT_CSS));
         int numberOfWorkoutsAfterRemoving = workoutsAfterAdding.size();
-        assertEquals(numberOfWorkoutsAfterRemoving, numberOfWorkouts - 1, "Workout hasn't deleted");
+        assertEquals(numberOfWorkoutsAfterRemoving, numberOfWorkouts - 1, "Workout isn't deleted");
     }
 }

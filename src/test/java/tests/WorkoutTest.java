@@ -33,6 +33,7 @@ public class WorkoutTest extends BaseTest {
     public void workoutFullAdd() {
         createWorkout();
         workoutSteps.completeFullForm("Bike", workout);
+        workoutSteps.workoutAddedChecking();
     }
 
     @Test(retryAnalyzer = Retry.class, description = "Checking workout data", priority = 2)
@@ -47,12 +48,14 @@ public class WorkoutTest extends BaseTest {
     public void workoutQuickAdd() {
         createWorkout();
         workoutSteps.completeQuickForm("Bike", workout);
+        workoutSteps.workoutAddedChecking();
     }
 
     @Test(retryAnalyzer = Retry.class, description = "Delete workout", priority = 4)
     @Description("Checking workout can be deleted from calendar")
     public void workoutDelete() {
         workoutSteps.deleteWorkout(2);
+        workoutSteps.workoutDeletedChecking();
     }
 }
 

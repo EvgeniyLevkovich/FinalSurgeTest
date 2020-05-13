@@ -28,7 +28,7 @@ public class WorkoutAddPage extends BasePage {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id(ACTIVITY_LIST_ID)));
     }
 
-    public void completeForm(String ActivityType, Workout workout) {
+    public void completeFullForm(String ActivityType, Workout workout) {
         driver.findElement(By.xpath(String.format(ACTIVITY_TYPE_XPATH, ActivityType))).click();
         new TextArea().write(driver, "WorkoutDate", workout.getDate());
         new TextArea().write(driver, "WorkoutTime", workout.getTime());
