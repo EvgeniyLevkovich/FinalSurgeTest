@@ -6,7 +6,6 @@ import org.openqa.selenium.WebDriver;
 import pages.LoginPage;
 
 public class LoginSteps {
-
     LoginPage loginPage;
 
     public LoginSteps(WebDriver driver) {

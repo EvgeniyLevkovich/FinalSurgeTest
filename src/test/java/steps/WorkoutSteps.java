@@ -8,7 +8,6 @@ import models.Workout;
 import pages.WorkoutDataPage;
 
 public class WorkoutSteps {
-
     WorkoutAddPage workoutAddPage;
     CalendarPage calendarPage;
     WorkoutDataPage workoutDataPage;
@@ -41,6 +40,7 @@ public class WorkoutSteps {
         calendarPage.checkWorkoutAddedToCalendar();
     }
 
+    @Step("Delete workout")
     public void deleteWorkout(int workoutIndex) {
         calendarPage.getNumberOfWorkouts();
         calendarPage.deleteWorkout(workoutIndex);

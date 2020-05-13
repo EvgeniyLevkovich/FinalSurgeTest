@@ -9,7 +9,6 @@ import java.util.List;
 import static org.testng.Assert.assertEquals;
 
 public class CalendarPage extends BasePage {
-
     public int numberOfWorkouts;
     private final static String CALENDAR_URL = "https://log.finalsurge.com/Calendar.cshtml";
     private final static String FULL_ADD_BUTTON_ID = "FullAddBtn";

@@ -8,7 +8,6 @@ import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
 public class WorkoutDataPage extends BasePage {
-
     private final static String UPDATE_WORKOUT_CSS = ".dropdown-toggle";
     private final static String ACTIVITY_TYPE_NAME_CSS = ".activityTypeName";
     private final static String WORKOUT_NAME_CSS = "div[style='clear: both; padding-top: 10px;']";

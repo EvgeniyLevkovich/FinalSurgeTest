@@ -10,7 +10,6 @@ import static org.testng.Assert.assertTrue;
 
 @Log4j2
 public class LoginPage extends BasePage {
-
     private final static String URL = "https://log.finalsurge.com/";
     private final static By LOGIN_FIELD = By.id("login_name");
     private final static By PASSWORD_FIELD = By.id("login_password");

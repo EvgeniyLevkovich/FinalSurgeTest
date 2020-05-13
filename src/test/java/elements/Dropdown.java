@@ -7,7 +7,6 @@ import org.openqa.selenium.support.ui.Select;
 
 @Log4j2
 public class Dropdown {
-
     public static void selectOption(WebDriver driver, String id, String text) {
         log.info("Selecting  '" + text + "' option from dropdown with id = " + id);
         Select select = new Select(driver.findElement(By.id(id)));
