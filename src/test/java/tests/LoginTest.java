@@ -6,7 +6,6 @@ import org.testng.annotations.Test;
 import utils.Retry;
 
 public class LoginTest extends BaseTest {
-
     @Test(retryAnalyzer = Retry.class, description = "Login")
     @Description("Login using valid credentials")
     public void logIn() {
